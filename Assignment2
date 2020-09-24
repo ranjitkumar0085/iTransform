@@ -1,0 +1,9 @@
+Docker Update:-
+I have set up linux vm and Installed Docker and completed the below assignments
+Find a image from dockerhub of your choice
+List all the available images in your machine/vm
+Pull ubuntu os from dockerhub
+Run the container of ubuntu in attached mode.
+Check how many ubuntu containers are running and stopped
+Install software of your choice in ubuntu container using "apt-get install"
+Now Create a Container out of this image and login into it to see if you can see the file and software installed by you in the previous container.
