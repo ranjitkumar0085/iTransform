@@ -1,0 +1,47 @@
+Docker Assignments Final
+Install Docker
+Step1: apt-get update 
+Step2: apt-get install docker.io
+Pull the official image from docker hub
+Ex: 1) docker pull ubuntu, 2) docker pull nginx
+List all the available images in your machine
+Ex: docker images
+Run the docker image and container will create in stop state.
+Ex: docker run <image_name>
+Run the docker image and container will create in running state.
+docker run -it -d <images_name>
+Go inside container and work with them
+Ex: docker exec -it <container_id> bash
+Start, Stop and Kill docker container
+Ex: docker start < container_id>, docker stop <container_id>, docker kill <container_id>
+Create a container of your image
+Ex: docker run <image_name>
+Remove docker images
+Ex: docker rmi <image_name> or <image_id>,  docker rmi -f $(docker images -qa)
+Remove or delete docker container
+Ex: docker rm -f <container-id>, For All container: docker rm -f $(docker ps -a -q) 
+Saving changes to a container
+Ex: docker commit <container-id> <new-name-for-image>
+Install apache2 and commit and go inside container and port mapping of apache2 service.
+Step1: apt-get update 
+Step2: apt-get install apache2
+Step2: docker commit <container-id> <username-of-docker-hub/new-images-name> 
+Step3: docker run -it -p 82:80 -d <images-name>
+Step4: docker exec -it <container-id> bash
+Step5: service apache2 start
+Step6: Go and check browser hitting url localhost:82 and able to access home(index) page of apache2
+Pushing a container to Docker Hub
+Step1: docker login
+Step2: docker push <username/image-name>
+Build a image thru Dockerfile(Various commands in Dockerfile)
+Ex: 	FROM ubuntu
+RUN apt-get update
+RUN apt-get -y install apache2
+ADD . /var/www/html
+ENTRYPOINT apachectl -D FOREGROUND
+ENV name Devops RANJIT
+Run the below command to build the Dockerfile 
+Ex: docker build . -t new_dockerfile
+Run the new build image to check apache2 is installed correctly or not.
+Ex: docker run -it -p 84:80 new_dockerfile
+
