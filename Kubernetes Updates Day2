@@ -1,0 +1,24 @@
+Kubernetes Updates:-
+
+I have completed basic opertaion like:
+
+-Create a yaml file containing the pod spec for the nginx pod.
+-Create the pod.
+-Verify the pod has been created or not
+-Create yaml file to create replicaset
+-Scale up and down the replicas
+
+Below are the commands which i have used while doing lab:
+
+kubectl get nodes
+kubectl get pods
+kubectl run nginx --image=nginx
+kubectl get pods -o wide
+kubectl get replicaset
+kubectl describe pod newpods-bqkbm | grep -i image
+kubectl get pods -o wide
+kubectl get pods webapp
+kubectl run redis --image=redis123 --dry-run=client -o yaml > pod.yaml
+kubectl apply -f pod.yaml
+kubectl edit pods redis
+
