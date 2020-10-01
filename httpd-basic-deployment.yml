@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-apache-deployment
+  labels:
+     app: myapp
+     type: front-end
+spec:
+  tepmlate:
+    metadata:
+       name: myapp-pod
+       labels:
+           app: myapp
+           type: front-end
+    spec:
+       containers:
+       - name: apavhe-container1
+         image: httpd
+         port:
+         - containerPort: 80
+  replicas: 3
+  selector:
+    matchLabels:
+       type: front-end
